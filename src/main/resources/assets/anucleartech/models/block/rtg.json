@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "anucleartech:block/rtg_topbottom",
+    "bottom": "anucleartech:block/rtg_topbottom",
+    "side": "anucleartech:block/rtg_side"
+  }
+}
