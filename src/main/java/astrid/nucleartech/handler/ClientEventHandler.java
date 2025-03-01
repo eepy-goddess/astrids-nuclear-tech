@@ -17,7 +17,7 @@ public class ClientEventHandler {
     public static void client_setup(FMLClientSetupEvent event) {
         AstridNuclearTech.LOGGER.info("Client setup event reached");
         event.enqueueWork(() -> {
-            MenuScreens.<RTGMenu, RTGScreen>register((MenuType<? extends RTGMenu>) NuclearTechMenus.RTG.get(), RTGScreen::new);
+            MenuScreens.<RTGMenu, RTGScreen>register((MenuType<RTGMenu>) NuclearTechMenus.RTG.get(), RTGScreen::new);
         });
     }
 }
