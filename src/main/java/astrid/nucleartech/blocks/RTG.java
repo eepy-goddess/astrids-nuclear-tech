@@ -34,8 +34,8 @@ public class RTG extends BaseEntityBlock {
 
     @Override
     public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit_result) {
-        if (!level.isClientSide) {
-            player.openMenu(state.getMenuProvider(level, pos));
+        if (!level.isClientSide && level.getBlockEntity(pos) instanceof RTGBlockEntity rtgblockentity) {
+            player.openMenu(rtgblockentity);
         }
         return InteractionResult.SUCCESS;
     }
