@@ -1,6 +1,7 @@
 package astrid.nucleartech.gui;
 
 import astrid.nucleartech.blockentities.RTGBlockEntity;
+import astrid.nucleartech.items.RTGFuel;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
@@ -27,8 +28,7 @@ public class RTGMenu extends AbstractContainerMenu {
 
     public void addSlots(Inventory inv, Container entity) {
         this.addStandardInventorySlots(inv, 8, 78);
-        this.addSlot(new Slot(entity, 0, 54, 28
-        ));
+        this.addSlot(new RTGSlot(entity, 0, 54, 28));
     }
 
     @Override
@@ -44,5 +44,16 @@ public class RTGMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return player.isAlive();
+    }
+
+    public class RTGSlot extends Slot {
+        public RTGSlot(Container container, int id, int x, int y) {
+            super(container, id, x, y);
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack itemstack) {
+            return itemstack.getItem() instanceof RTGFuel;
+        }
     }
 }

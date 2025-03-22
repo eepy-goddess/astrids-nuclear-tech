@@ -1,5 +1,6 @@
 package astrid.nucleartech.main;
 
+import astrid.nucleartech.items.PlutoniumPellet;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,9 @@ public class NuclearTechItems {
     });
     public static final RegistryObject<Item> RTG = ITEMS.register("rtg", () -> {
         return new BlockItem(NuclearTechBlocks.RTG.get(), new Item.Properties().setId(ITEMS.key("rtg")));
+    });
+    public static final RegistryObject<Item> PLUTONIUM_238_PELLET = ITEMS.register("plutonium238_pellet", () -> {
+        return new PlutoniumPellet(new Item.Properties().setId(ITEMS.key("plutonium238_pellet")));
     });
 
     public static void register(IEventBus bus) {

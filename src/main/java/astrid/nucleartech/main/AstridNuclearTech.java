@@ -2,6 +2,7 @@ package astrid.nucleartech.main;
 
 import astrid.nucleartech.blockentities.NuclearTechBlockEntites;
 import astrid.nucleartech.gui.NuclearTechMenus;
+import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +29,7 @@ public class AstridNuclearTech {
         NuclearTechItems.register(bus);
         NuclearTechTabs.register(bus);
         NuclearTechMenus.register(bus);
+
         bus.addListener(this::common_setup);
     }
 }
